@@ -8,6 +8,7 @@ import (
 func TestSum(t *testing.T) {
 	result := service.Sum(1, 3)
 	expected := 4
+
 	if result != expected {
 		t.Errorf("Expected: %d, got: %d", expected, result)
 	}
