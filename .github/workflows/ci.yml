@@ -19,5 +19,11 @@ jobs:
 
       - name: Testing
         run: go test ./...
-       
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          args: --config=.golangci.yml
+        run: golangci-lint run
       
