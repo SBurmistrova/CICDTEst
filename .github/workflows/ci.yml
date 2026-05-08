@@ -19,8 +19,9 @@ jobs:
 
       - name: build
         uses: actions/upload-artifact@v4
-        run: go build -o app
-        
+        with:
+          run: go build -o app
+
       - name: testing
         run: go test ./...
       
