@@ -20,5 +20,5 @@ jobs:
         run: go build -o app ./cmd/app/main.go
 
       - name: informing
-        if: github.event_name == "push" && github.ref == "refs/heads/master"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: echo "Deploy completed"
