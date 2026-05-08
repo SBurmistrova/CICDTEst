@@ -21,4 +21,4 @@ jobs:
         run: go version
 
       - name: Run application
-        run: go run main.go
+        run: go run ./cmd/app/main.go
