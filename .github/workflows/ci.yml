@@ -1,7 +1,7 @@
 name: First CI Pipeline
 
 on:
-  pull_request:
+  push:
     branches: [ develop, master ]
 
 jobs:
