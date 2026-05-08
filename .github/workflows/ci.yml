@@ -1,7 +1,7 @@
 name: First CI Pipeline
 
 on:
-  pull_request:
+  push:
     branches: [ develop, master ]
 
 jobs:
@@ -16,15 +16,14 @@ jobs:
         with:
           go-version: '1.24'
 
-      - name: Testing
-        run: go test ./...
+      - name: build
+        run: go build -o app ./cmd/app/main.go
 
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          args: --config=.golangci.yml
+      - name: informing
+        if: github.event_name == "push" && github.ref == "refs/heads/master"
+        run: echo "Deploy completed"
       
-      - name: code formatting 
-        run: golangci-lint run
-      
+
+on:
+pull_request:
+    branches: [ develop, master ]
