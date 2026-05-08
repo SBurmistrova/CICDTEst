@@ -22,3 +22,6 @@ jobs:
 
       - name: Run application
         run: go run ./cmd/app/main.go
+
+      - name: Run tests
+        run: go test ./service
