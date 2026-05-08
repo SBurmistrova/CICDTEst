@@ -1,0 +1,30 @@
+# .golangci.yml
+run:
+  timeout: 5m
+
+linters:
+  enable:
+    - gofmt
+    - goimports
+    - revive
+    - gosimple
+    - bodyclose
+    - decorder
+    - dupl
+    - err113
+    - goconst
+    - goprintffuncname
+    - gosec
+    - iface
+    - misspell
+    - nilnesserr
+    - nlreturn
+    - perfsprint
+    - prealloc
+    - unconvert
+    - varnamelen
+    - whitespace
+    - wsl
+    # Добавьте другие линтеры по необходимости
+  disable:
+    - errcheck # Пример отключения
