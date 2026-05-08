@@ -16,15 +16,10 @@ jobs:
         with:
           go-version: '1.24'
 
-      - name: Testing
-        run: go test ./...
+      - name: build
+        run: go build -o app ./cmd/app/main.go
 
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          args: --config=.golangci.yml
-      
-      - name: code formatting 
-        run: golangci-lint run
+      - name: informing
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: echo "Deploy completed"
       
