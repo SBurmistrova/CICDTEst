@@ -17,5 +17,10 @@ jobs:
         with:
           go-version: '1.24'
 
-      - name: code formatting
-        run: golangci-lint run
+      - name: build
+        uses: actions/upload-artifact@v4
+        run: go build -o app
+        
+      - name: testing
+        run: go test ./...
+      
